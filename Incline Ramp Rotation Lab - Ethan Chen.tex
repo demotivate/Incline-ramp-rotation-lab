@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{gensymb}
 \usepackage{indentfirst}
 \setlength{\parindent}{20pt}
 \usepackage{siunitx}
@@ -215,7 +216,48 @@ in the sphere.
     \label{tab:raw_data}
 \end{table}
 
-\subsubsection{Calculation of uncertainty from human error}
+\section{Processed data}
+
+Note that the values used in the following calculations are unrounded and therefore are not entirely
+reflected by Table \ref*{tab:raw_data}.
+
+\subsection{Averaged values}
+
+The averaged values of the time it takes for either the hollow cylinder or
+the solid sphere to roll completely down the ramp is calculated using the following
+formula:
+
+\begin{align*}
+                  & \overline{t} = \frac{\sum t}{n}
+    \\
+    \text{where } & \overline{t} = \text{ averaged value of all the trials } /\unit{s}
+    \\
+                  & t = \text{ a single time value of one of the trials } /\unit{s}
+    \\
+                  & n = \text{ number of trials }
+\end{align*}
+
+\subsubsection{Averaged values from raw data for hollow cylinder}
+
+\begin{align*}
+     & \overline{t} = \frac{\sum t}{n}
+    \\
+     & \overline{t} = \frac{33.12 \unit{s}}{20}
+    \\
+     & = 1.66 \unit{s}
+\end{align*}
+
+\subsubsection{Averaged values from raw data for solid sphere}
+
+\begin{align*}
+     & \overline{t} = \frac{\sum t}{n}
+    \\
+     & \overline{t} = \frac{29.19\unit{s}}{20}
+    \\
+     & = 1.47\unit{s}
+\end{align*}
+
+\subsection{Calculation of uncertainty from human error}
 
 The uncertainty for both the timing of the hollow cylinder and
 the solid sphere is calculated using the following formula.
@@ -223,6 +265,8 @@ the solid sphere is calculated using the following formula.
 $$
     err = \frac{MAX - MIN}{2}
 $$
+
+\subsubsection{Uncertainty for hollow cylinder}
 
 The hollow cylinder had a maximum time of 1.99 \unit{s} and a minimum
 time of 1.36 \unit{s}. The calculation for the human error uncertainty of the hollow cylinder is
@@ -238,6 +282,8 @@ shown below.
      & err = 0.3 \unit{s}
 \end{align*}
 
+\subsubsection{Uncertainty for solid sphere}
+
 The solid sphere had a maximum time of 1.64 \unit{s} and a minimum time of 1.24 \unit{s}.
 The calculation for the human error uncertainty of the solid sphere is shown below.
 
@@ -249,8 +295,103 @@ The calculation for the human error uncertainty of the solid sphere is shown bel
      & err = 0.2\unit{s}
 \end{align*}
 
-\section{Processed data}
+\subsection{Formal experimental results}
+
+Using the averaged values and calculated uncertainty for both the
+hollow cylinder and the solid sphere, the formal experimental results
+can be presented.
+
+$$
+    \overline{t}_{hollow cylinder} = 1.7 \unit{s} \pm 0.3 \unit{s}
+$$
+
+$$
+    \overline{t}_{solid sphere} = 1.5 \unit{s} \pm 0.2 \unit{s}
+$$
+
+
+\section{Determining predicted times}
+
+\subsection{Angle of inclination of the ramp}
+
+Given that we know what the length and height of the ramp is, we can calculate
+the angle of inclination using trigonometry.
+
+The length of the ramp is $89.50 \unit{cm} \pm 0.05\unit{cm}$, and the height of the ramp is
+\\$14.70 \unit{cm} \pm 0.05\unit{cm}$.
+
+    First is to determine what the angle of inclination would be without consideration
+    of the measurement uncertainties.
+
+    \begin{align*}
+         & \theta = \tan^{-1}\left( \frac{height}{length} \right)
+        \\
+         & = \tan^{-1}\left(\frac{14.70 \unit{cm}}{89.50 \unit{cm}}\right)
+        \\
+         & = 9.33\degree
+    \end{align*}
+
+    Next is to consider the range of $\theta$ produced as a result of the measurement
+    uncertainties.
+
+    Beginning with the maximum value of $\theta$:
+
+    \begin{align*}
+         & \theta_{max} = \tan^{-1}\left( \frac{height}{length} \right)
+        \\
+         & = \tan^{-1}\left(\frac{14.75 \unit{cm}}{89.45 \unit{cm}}\right)
+        \\
+         & = 9.3636\degree
+        \\
+         & = 9.36\degree
+    \end{align*}
+
+    and then the minimum value of $\theta$:
+
+    \begin{align*}
+         & \theta_{min} = \tan^{-1}\left( \frac{height}{length} \right)
+        \\
+         & = \tan^{-1}\left(\frac{14.65 \unit{cm}}{89.55 \unit{cm}}\right)
+        \\
+         & = 9.2910\degree
+        \\
+         & = 9.29\degree
+    \end{align*}
+
+    When we average the value of the maximum and the minimum, we get
+$9.33\degree$ as shown in the calculation below. This indicates that
+    the midpoint of the range reflects our original answer without consideration
+    of the measurement uncertainties.
+
+    \begin{align*}
+         & \theta = \frac{\theta_{max} + \theta_{min}}{2}
+        \\
+         & = \frac{9.3636\degree + 9.2910\degree}{2}
+        \\
+         & = 9.3273\degree
+        \\
+         & = 9.33\degree
+    \end{align*}
+
+    We then apply the absolute error formula to the maximum and minimum values
+    of $\theta$ to obtain the uncertainty of the angle of inclination.
+
+\begin{align*}
+     & err = \frac{MAX - MIN}{2}
+    \\
+     & = \frac{9.3636\degree - 9.2910\degree}{2}
+    \\
+     & = 0.0363\degree
+    \\
+     & = 0.04\degree
+\end{align*}
+
+Finally, the predicted angle of inclination can be presented as:
+$$
+    \theta = 9.33\degree \pm 0.04\degree
+$$
 
 \section{Comparing experimental times to predicted times}
+
 
 \end{document}
