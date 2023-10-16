@@ -216,6 +216,10 @@ in the sphere.
     \label{tab:raw_data}
 \end{table}
 
+Phyphox has determined that the angle of inclination when the phone is laid down on
+the table is 0.80\degree, and the angle of inclination when put on the ramp
+is 10.10\degree.
+
 \section{Processed data}
 
 Note that the values used in the following calculations are unrounded and therefore are not entirely
@@ -314,81 +318,87 @@ $$
 
 \subsection{Angle of inclination of the ramp}
 
-Given that we know what the length and height of the ramp is, we can calculate
-the angle of inclination using trigonometry.
+Given that we know what the height and hypotenuse of the ramp is, we can calculate
+the angle of inclination using trigonometry. Note that eventually in our calculation of the predicted times,
+we can simply substitute $\sin\theta$ for $\frac{height}{hypotenuse}$.
+However, we will nevertheless be calculating the angle of inclination to ensure
+that the calculated value is reasonable by comparing it to the angle of inclination
+measured by phyphox.
 
-The length of the ramp is $89.50 \unit{cm} \pm 0.05\unit{cm}$, and the height of the ramp is
-\\$14.70 \unit{cm} \pm 0.05\unit{cm}$.
+Because there is measurement uncertainty in the height and hypotenuse of the ramp,
+we will approach calculating the angle of inclination by determining the maximum
+and minimum value of the angle of inclination.
 
-    First is to determine what the angle of inclination would be without consideration
-    of the measurement uncertainties.
-
-    \begin{align*}
-         & \theta = \tan^{-1}\left( \frac{height}{length} \right)
-        \\
-         & = \tan^{-1}\left(\frac{14.70 \unit{cm}}{89.50 \unit{cm}}\right)
-        \\
-         & = 9.33\degree
-    \end{align*}
-
-    Next is to consider the range of $\theta$ produced as a result of the measurement
-    uncertainties.
-
-    Beginning with the maximum value of $\theta$:
-
-    \begin{align*}
-         & \theta_{max} = \tan^{-1}\left( \frac{height}{length} \right)
-        \\
-         & = \tan^{-1}\left(\frac{14.75 \unit{cm}}{89.45 \unit{cm}}\right)
-        \\
-         & = 9.3636\degree
-        \\
-         & = 9.36\degree
-    \end{align*}
-
-    and then the minimum value of $\theta$:
-
-    \begin{align*}
-         & \theta_{min} = \tan^{-1}\left( \frac{height}{length} \right)
-        \\
-         & = \tan^{-1}\left(\frac{14.65 \unit{cm}}{89.55 \unit{cm}}\right)
-        \\
-         & = 9.2910\degree
-        \\
-         & = 9.29\degree
-    \end{align*}
-
-    When we average the value of the maximum and the minimum, we get
-$9.33\degree$ as shown in the calculation below. This indicates that
-    the midpoint of the range reflects our original answer without consideration
-    of the measurement uncertainties.
-
-    \begin{align*}
-         & \theta = \frac{\theta_{max} + \theta_{min}}{2}
-        \\
-         & = \frac{9.3636\degree + 9.2910\degree}{2}
-        \\
-         & = 9.3273\degree
-        \\
-         & = 9.33\degree
-    \end{align*}
-
-    We then apply the absolute error formula to the maximum and minimum values
-    of $\theta$ to obtain the uncertainty of the angle of inclination.
+The height of the ramp is $14.70\unit{cm} \pm 0.05\unit{cm}$, and the
+hypotenuse of the ramp is $90.90\unit{cm} \pm 0.05\unit{cm}$.
 
 \begin{align*}
-     & err = \frac{MAX - MIN}{2}
+     & \theta_{max} = \sin^{-1}\left(\frac{height}{hypotenuse}\right)
     \\
-     & = \frac{9.3636\degree - 9.2910\degree}{2}
+     & = \sin^{-1}\left(\frac{14.75\unit{cm}}{90.85\unit{cm}}\right)
     \\
-     & = 0.0363\degree
+     & = 9.3436\degree
+    \\
+     & = 9.34\degree
+    \\
+    \\
+     & \theta_{min} = \sin^{-1}\left(\frac{height}{hypotenuse}\right)
+    \\
+     & = \sin^{-1}\left(\frac{14.65\unit{cm}}{90.95\unit{cm}}\right)
+    \\
+     & = 9.2694\degree
+    \\
+     & = 9.27\degree
+\end{align*}
+
+The averaged value and absolute error of the maximum and minimum values
+will then be calculated.
+
+\begin{align*}
+     & \theta = \frac{\theta_{max} + \theta_{min}}{2}
+    \\
+     & = \frac{9.3436\degree + 9.2694\degree}{2}
+    \\
+     & = 9.3065\degree
+    \\
+     & = 9.31\degree
+    \\
+    \\
+     & err = \frac{\theta_{max} - \theta_{min}}{2}
+    \\
+     & = \frac{9.3436\degree - 9.2694\degree}{2}
+    \\
+     & = 0.0371\degree
     \\
      & = 0.04\degree
 \end{align*}
 
-Finally, the predicted angle of inclination can be presented as:
+The angle of inclination can then be presented as:
 $$
-    \theta = 9.33\degree \pm 0.04\degree
+    \theta = 9.31\degree \pm 0.04\degree
+$$
+
+Phyphox measured that the angle of inclination of the table was 0.80\degree
+and the angle of inclination of the ramp was 10.10\degree. By subtracting
+these values, we determine that the angle of inclination between the table
+and the ramp is 9.30\degree, indicating that the angle of inclination
+calculated through trigonometry is reasonable as the value of 9.30\degree
+fits within the range of $9.31\degree \pm 0.04\degree$.
+
+\subsection{Calculating predicted time for hollow cylinder}
+
+Recalling the following formulas for the hollow cylinder:
+\begin{equation}
+    a = \frac{1}{2}g\sin\theta
+\end{equation}
+\begin{equation}
+    t = \sqrt{\frac{2s}{a}}
+\end{equation}
+
+By substituting Equation 1 for $a$ in Equation 2, we derive the formula:
+
+$$
+    t = \sqrt{\frac{4s}{g\sin\theta}}
 $$
 
 \section{Comparing experimental times to predicted times}
