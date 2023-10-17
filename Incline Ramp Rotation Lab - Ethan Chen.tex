@@ -31,6 +31,7 @@
 
 \section{Background information}
 
+% TODO: bibliography
 % TODO: qualitative explanation of torque and force acting on cylinder
 
 \begin{figure}[H]
@@ -175,6 +176,7 @@ in the sphere.
 
 \begin{table}[H]
     \centering
+    \caption{Raw data of time to roll down ramp for both hollow cylinder and solid sphere}
     \begin{tblr}{
             row{even} = {c},
             row{3} = {c},
@@ -212,7 +214,6 @@ in the sphere.
         1.7 & 1.4                 \\
         1.7 & 1.5
     \end{tblr}
-    \caption{Raw data of time to roll down ramp for both hollow cylinder and solid sphere}
     \label{tab:raw_data}
 \end{table}
 
@@ -401,7 +402,151 @@ $$
     t = \sqrt{\frac{4s}{g\sin\theta}}
 $$
 
+We can then calculate the predicted time for the hollow cylinder to roll
+down the ramp.
+
+\begin{align*}
+                  & \text{Calculation of } t
+    \\
+                  & t = \sqrt{\frac{4s}{g\sin\theta}}
+    \\
+                  & = \sqrt{\frac{4(0.9090\unit{m} \pm 0.0005\unit{m})}{(9.81\unit{ms^{-2}})(\frac{0.1470\unit{m} \pm 0.0005\unit{m}}{0.9090\unit{m} \pm 0.0005\unit{m}})}}
+    \\
+                  & = 1.5139\unit{s}
+    \\
+    \\
+                  & \text{Calculation of } \Delta t
+    \\
+                  & \frac{\Delta t}{t} = \sum \frac{\Delta x}{x}
+    \\
+    \text{where } & \Delta t = \text{ uncertainty value of the predicted time } /\unit{s}
+    \\
+                  & t = \text{ calculated predicted value of time } /\unit{s}
+    \\
+                  & \Delta x = \text{ uncertainty value of a value in the equation with a uncertainty }
+    \\
+                  & x = \text{ a value in the equation with an uncertainty }
+    \\
+                  & \frac{\Delta t}{1.5139\unit{s}} = \frac{0.0005\unit{m}}{0.9090\unit{m}} + \frac{0.0005\unit{m}}{0.1470\unit{m}} + \frac{0.0005\unit{m}}{0.9090\unit{m}}
+    \\
+                  & \Delta t = 0.00681\unit{s}
+    \\
+                  & = 0.007\unit{s}
+\end{align*}
+$$
+    t = 1.514\unit{s} \pm 0.007\unit{s}
+$$
+
+\subsection{Calculating predicted time for solid sphere}
+
+Recalling the following formulas for the solid sphere:
+\begin{equation}
+    a = \frac{5}{7}g\sin\theta
+\end{equation}
+\begin{equation}
+    t = \sqrt{\frac{2s}{a}}
+\end{equation}
+
+By substituting Equation 3 for $a$ in Equation 4, we derive the formula:
+$$
+    t = \sqrt{\frac{14s}{5g\sin\theta}}
+$$
+
+We can then calculate the predicted time for the solid sphere to roll
+down the ramp.
+
+\begin{align*}
+                  & \text{Calculation of } t
+    \\
+                  & t = \sqrt{\frac{14s}{5g\sin\theta}}
+    \\
+                  & t = \sqrt{\frac{14(0.9090\unit{m} \pm 0.0005\unit{m})}{5(9.81\unit{ms^{-2}})(\frac{0.1470\unit{m} \pm 0.0005\unit{m}}{0.9090\unit{m} \pm 0.0005\unit{m}})}}
+    \\
+                  & t = 1.2666\unit{s}
+    \\
+    \\
+                  & \text{Calculation of } \Delta t
+    \\
+                  & \frac{\Delta t}{t} = \sum \frac{\Delta x}{x}
+    \\
+    \text{where } & \Delta t = \text{ uncertainty value of the predicted time } /\unit{s}
+    \\
+                  & t = \text{ calculated predicted value of time } /\unit{s}
+    \\
+                  & \Delta x = \text{ uncertainty value of a value in the equation with a uncertainty }
+    \\
+                  & x = \text{ a value in the equation with an uncertainty }
+    \\
+                  & \frac{\Delta t}{1.2666\unit{s}} = \frac{0.0005\unit{m}}{0.9090\unit{m}} + \frac{0.0005\unit{m}}{0.1470\unit{m}} + \frac{0.0005\unit{m}}{0.9090\unit{m}}
+    \\
+                  & \Delta t = 0.00570\unit{s}
+    \\
+                  & = 0.006\unit{s}
+\end{align*}
+$$
+    t = 1.267\unit{s} \pm 0.006\unit{s}
+$$
+
 \section{Comparing experimental times to predicted times}
+
+\begin{table}[H]
+    \centering
+    \caption{Summary of the experimental and predicted times}
+    \begin{tabular}{l|l|l}
+                           & Hollow cylinder                   & Solid sphere                      \\
+        \hline
+        Predicted Value    & $1.514\unit{s} \pm 0.007\unit{s}$ & $1.267\unit{s} \pm 0.006\unit{s}$ \\
+        \hline
+        Experimental Value & $1.7\unit{s} \pm 0.3\unit{s}$     & $1.5\unit{s} \pm 0.2\unit{s}$
+    \end{tabular}
+    \label{tab:summary}
+\end{table}
+
+A summary of the experimental and predicted times for the hollow cylinder
+and the solid sphere to roll down the ramp is presented in Table
+\ref*{tab:summary}.
+
+\subsection{Evaluation of the results for the hollow cylinder}
+
+Given that the hollow cylinder was experimentally determined to take
+$1.7\unit{s} \pm 0.3\unit{s}$ to roll down the ramp and was predicted
+to take $1.514\unit{s} \pm 0.007\unit{s}$, it can be concluded that
+the experimental values for this investigation are in agreement
+with the predicted values, as the range given by the predicted value
+is a subset of the range given by the experimental value.
+
+The percent error can also be calculated as a mathematical reference
+as shown below:
+
+\begin{align*}
+     & \%_{err} = \left| \frac{experimental - predicted}{predicted} \right| \times 100\%
+    \\
+     & = \left| \frac{1.7\unit{s} - 1.514\unit{s}}{1.514\unit{s}} \right| \times 100\%
+    \\
+     & = 12\%
+\end{align*}
+
+\subsection{Evaluation of the results for the solid sphere}
+
+Given that the solid sphere was experimentally determined to take
+$1.5\unit{s} \pm 0.2\unit{s}$ to roll down the ramp and was predicted to take
+$1.267\unit{s} \pm 0.006\unit{s}$, it can be concluded that the experimental
+values for this investigation are not in agreement with the predicted values, as
+the range given by the predicted value does not intersect with the range
+of the experimental value (the maximum of the predicted value is
+$1.273\unit{s}$, while the minimum of the experimental value is
+$1.3\unit{s}$).
+
+The percent error can also be calculated as a mathematical reference
+as shown below:
+
+\begin{align*}
+     & \%_{err} = \left| \frac{experimental - predicted}{predicted} \right| \times 100\%
+    \\
+     & = \left| \frac{1.5\unit{s} - 1.267\unit{s}}{1.267\unit{s}} \right| \times 100\%
+    \\
+     & = 18\%
+\end{align*}
 
 
 \end{document}
